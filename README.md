@@ -1,2 +1,9 @@
-# nxtfr_gamelibs
-Nextgen Game Framework Library System
+nxtfr_gamelibs
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile
