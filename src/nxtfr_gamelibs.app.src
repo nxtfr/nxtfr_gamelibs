@@ -1,0 +1,17 @@
+{application, nxtfr_gamelibs,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {nxtfr_gamelibs_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env, [
+    {player_connected_mfa, {nxtfr_dev_gamelib, start_link, []}}
+  ]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
