@@ -8,6 +8,22 @@
     stdlib
    ]},
   {env, [
+    {game_lib_paths, [
+      "/usr/local/lib/elixir/lib/elixir/ebin",
+      "/usr/local/lib/elixir/lib/logger/ebin",
+      "/home/cflow/Projects/ao_gamelibs/_build/dev/lib/ao_lib_action/ebin",
+      "/home/cflow/Projects/ao_gamelibs/_build/dev/lib/ao_lib_obj/ebin",
+      "/home/cflow/Projects/ao_gamelibs/_build/dev/lib/ao_lib_player/ebin",
+      "/home/cflow/Projects/ao_gamelibs/_build/dev/lib/ao_lib_race/ebin",
+      "/home/cflow/Projects/ao_gamelibs/_build/dev/lib/ao_lib_skill/ebin"]},
+    {game_libs, [
+      compiler,
+      elixir,
+      logger,
+      ao_lib_player,
+      ao_lib_skill,
+      ao_lib_race
+    ]},
     {player_connected_mfa, {nxtfr_dev_gamelib, start_link, []}}
   ]},
   {modules, []},
