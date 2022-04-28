@@ -20,7 +20,8 @@ start_link() ->
 init([]) ->
     {ok, LibPaths} = application:get_env(game_lib_paths),
     {ok, Libs} = application:get_env(game_libs),
-    [code:add_patha(LibPath) || LibPath <- LibPaths],
+    [code:add_patha(code:root_dir() ++ LibPath) || LibPath <- LibPaths],
+    io:format("Added library paths: ~p.~n", [LibPaths]),
     %application:ensure_started(nxtfr_event),
     %nxtfr_event:add_global_handler(nxtfr_queue_event, nxtfr_queue_event_handler),
     {ok, State} = start_game_libs(Libs, []),
@@ -50,5 +51,5 @@ start_game_libs([], State) ->
 
 start_game_libs([GameLib | Rest], State) ->
     error_logger:info_msg("Starting application: ~p.~n", [GameLib]),
-    application:start(GameLib),
+    ok = application:start(GameLib),
     start_game_libs(Rest, State).
